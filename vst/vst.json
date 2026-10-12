@@ -1,0 +1,10 @@
+{
+  "name": "Cadenza",
+  "vendor": "lunarscraper",
+  "uid": "Cdnz",
+  "version": 1000,
+  "so": "cadenza.so",
+  "params": "params.json",
+  "layout": "layout.conf",
+  "_comment": "MIDI generator with a hand-written VST2 shell (cadenza_vst.cpp, after mpc-vst-drumgen): vst.json/params.json only feed mpc-vst-plugins' tools/gen_vst.py for params.h + the skin; build.sh compiles cadenza_vst.cpp itself. Notes go out through the plugin's own ALSA seq port 'Cadenza'."
+}

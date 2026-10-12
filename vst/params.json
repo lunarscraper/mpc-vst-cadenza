@@ -1,0 +1,536 @@
+{
+ "name": "Cadenza",
+ "params": [
+  {
+   "key": "key",
+   "name": "Key",
+   "options": [
+    "C",
+    "C#",
+    "D",
+    "Eb",
+    "E",
+    "F",
+    "F#",
+    "G",
+    "Ab",
+    "A",
+    "Bb",
+    "B"
+   ],
+   "default": "A"
+  },
+  {
+   "key": "scale",
+   "name": "Scale",
+   "options": [
+    "MINOR",
+    "MAJOR",
+    "DORIAN",
+    "PHRYGIAN",
+    "MIXOLYD",
+    "LYDIAN",
+    "HARM MIN",
+    "GOA PHRYG"
+   ],
+   "default": "MINOR"
+  },
+  {
+   "key": "style",
+   "name": "Style",
+   "options": [
+    "GROOVE",
+    "ROLLING",
+    "SUB"
+   ],
+   "default": "GROOVE"
+  },
+  {
+   "key": "seed",
+   "name": "Seed",
+   "min": 0,
+   "max": 9999,
+   "default": 1,
+   "display": "int"
+  },
+  {
+   "key": "prog",
+   "name": "Progression",
+   "options": [
+    "SEED",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12"
+   ],
+   "default": "SEED"
+  },
+  {
+   "key": "generate",
+   "name": "Generate",
+   "momentary": true
+  },
+  {
+   "key": "variate",
+   "name": "Variate",
+   "momentary": true
+  },
+  {
+   "key": "form",
+   "name": "Form",
+   "options": [
+    "16 BARS",
+    "INTRO",
+    "BUILD",
+    "PEAK",
+    "RELEASE"
+   ],
+   "default": "16 BARS"
+  },
+  {
+   "key": "bass_feel",
+   "name": "Bass Feel",
+   "options": [
+    "MELODIC",
+    "HYPNOTIC",
+    "DRIVING",
+    "MINIMAL"
+   ],
+   "default": "MELODIC"
+  },
+  {
+   "key": "tempo_ref",
+   "name": "Tempo Ref",
+   "min": 99,
+   "max": 160,
+   "default": 99,
+   "display": "string"
+  },
+  {
+   "key": "swing",
+   "name": "Swing",
+   "min": 50,
+   "max": 75,
+   "default": 50,
+   "unit": "%",
+   "display": "int"
+  },
+  {
+   "key": "gate",
+   "name": "Gate",
+   "min": 25,
+   "max": 200,
+   "default": 100,
+   "unit": "%",
+   "display": "int"
+  },
+  {
+   "key": "pad_mode",
+   "name": "Pad",
+   "options": [
+    "SINGLE",
+    "CHORD"
+   ],
+   "default": "CHORD"
+  },
+  {
+   "key": "cc_out",
+   "name": "CC Out",
+   "options": [
+    "OFF",
+    "SWEEP",
+    "PORTA",
+    "BOTH"
+   ],
+   "default": "OFF"
+  },
+  {
+   "key": "preset",
+   "name": "Preset",
+   "min": 1,
+   "max": 32,
+   "default": 1,
+   "display": "int"
+  },
+  {
+   "key": "preset_load",
+   "name": "Load",
+   "momentary": true
+  },
+  {
+   "key": "preset_save",
+   "name": "Save",
+   "momentary": true
+  },
+  {
+   "key": "cc_ch",
+   "name": "Control Ch",
+   "options": [
+    "OFF",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16"
+   ],
+   "default": "16"
+  },
+  {
+   "key": "status",
+   "name": "Status",
+   "min": 0,
+   "max": 1,
+   "display": "string",
+   "type": "readout"
+  },
+  {
+   "key": "chords",
+   "name": "Chords",
+   "min": 0,
+   "max": 1,
+   "display": "string",
+   "type": "readout"
+  },
+  {
+   "key": "l1_on",
+   "name": "On",
+   "options": [
+    "OFF",
+    "ON"
+   ],
+   "default": "ON"
+  },
+  {
+   "key": "l1_ch",
+   "name": "Channel",
+   "min": 1,
+   "max": 16,
+   "default": 1,
+   "display": "int"
+  },
+  {
+   "key": "l1_oct",
+   "name": "Octave",
+   "min": -2,
+   "max": 2,
+   "default": 0,
+   "display": "string"
+  },
+  {
+   "key": "l1_var",
+   "name": "Variation",
+   "min": 0,
+   "max": 99,
+   "default": 0,
+   "display": "string"
+  },
+  {
+   "key": "l1_dice",
+   "name": "Dice",
+   "momentary": true
+  },
+  {
+   "key": "l1_pat",
+   "name": "Steps",
+   "min": 0,
+   "max": 1,
+   "display": "string",
+   "type": "readout"
+  },
+  {
+   "key": "l2_on",
+   "name": "On",
+   "options": [
+    "OFF",
+    "ON"
+   ],
+   "default": "ON"
+  },
+  {
+   "key": "l2_ch",
+   "name": "Channel",
+   "min": 1,
+   "max": 16,
+   "default": 2,
+   "display": "int"
+  },
+  {
+   "key": "l2_oct",
+   "name": "Octave",
+   "min": -2,
+   "max": 2,
+   "default": 0,
+   "display": "string"
+  },
+  {
+   "key": "l2_var",
+   "name": "Variation",
+   "min": 0,
+   "max": 99,
+   "default": 0,
+   "display": "string"
+  },
+  {
+   "key": "l2_dice",
+   "name": "Dice",
+   "momentary": true
+  },
+  {
+   "key": "l2_pat",
+   "name": "Steps",
+   "min": 0,
+   "max": 1,
+   "display": "string",
+   "type": "readout"
+  },
+  {
+   "key": "l3_on",
+   "name": "On",
+   "options": [
+    "OFF",
+    "ON"
+   ],
+   "default": "ON"
+  },
+  {
+   "key": "l3_ch",
+   "name": "Channel",
+   "min": 1,
+   "max": 16,
+   "default": 3,
+   "display": "int"
+  },
+  {
+   "key": "l3_oct",
+   "name": "Octave",
+   "min": -2,
+   "max": 2,
+   "default": 0,
+   "display": "string"
+  },
+  {
+   "key": "l3_var",
+   "name": "Variation",
+   "min": 0,
+   "max": 99,
+   "default": 0,
+   "display": "string"
+  },
+  {
+   "key": "l3_dice",
+   "name": "Dice",
+   "momentary": true
+  },
+  {
+   "key": "l3_pat",
+   "name": "Steps",
+   "min": 0,
+   "max": 1,
+   "display": "string",
+   "type": "readout"
+  },
+  {
+   "key": "l4_on",
+   "name": "On",
+   "options": [
+    "OFF",
+    "ON"
+   ],
+   "default": "ON"
+  },
+  {
+   "key": "l4_ch",
+   "name": "Channel",
+   "min": 1,
+   "max": 16,
+   "default": 4,
+   "display": "int"
+  },
+  {
+   "key": "l4_oct",
+   "name": "Octave",
+   "min": -2,
+   "max": 2,
+   "default": 0,
+   "display": "string"
+  },
+  {
+   "key": "l4_var",
+   "name": "Variation",
+   "min": 0,
+   "max": 99,
+   "default": 0,
+   "display": "string"
+  },
+  {
+   "key": "l4_dice",
+   "name": "Dice",
+   "momentary": true
+  },
+  {
+   "key": "l4_pat",
+   "name": "Steps",
+   "min": 0,
+   "max": 1,
+   "display": "string",
+   "type": "readout"
+  },
+  {
+   "key": "l5_on",
+   "name": "On",
+   "options": [
+    "OFF",
+    "ON"
+   ],
+   "default": "ON"
+  },
+  {
+   "key": "l5_ch",
+   "name": "Channel",
+   "min": 1,
+   "max": 16,
+   "default": 5,
+   "display": "int"
+  },
+  {
+   "key": "l5_oct",
+   "name": "Octave",
+   "min": -2,
+   "max": 2,
+   "default": 0,
+   "display": "string"
+  },
+  {
+   "key": "l5_var",
+   "name": "Variation",
+   "min": 0,
+   "max": 99,
+   "default": 0,
+   "display": "string"
+  },
+  {
+   "key": "l5_dice",
+   "name": "Dice",
+   "momentary": true
+  },
+  {
+   "key": "l5_pat",
+   "name": "Steps",
+   "min": 0,
+   "max": 1,
+   "display": "string",
+   "type": "readout"
+  },
+  {
+   "key": "l6_on",
+   "name": "On",
+   "options": [
+    "OFF",
+    "ON"
+   ],
+   "default": "ON"
+  },
+  {
+   "key": "l6_ch",
+   "name": "Channel",
+   "min": 1,
+   "max": 16,
+   "default": 6,
+   "display": "int"
+  },
+  {
+   "key": "l6_oct",
+   "name": "Octave",
+   "min": -2,
+   "max": 2,
+   "default": 0,
+   "display": "string"
+  },
+  {
+   "key": "l6_var",
+   "name": "Variation",
+   "min": 0,
+   "max": 99,
+   "default": 0,
+   "display": "string"
+  },
+  {
+   "key": "l6_dice",
+   "name": "Dice",
+   "momentary": true
+  },
+  {
+   "key": "l6_pat",
+   "name": "Steps",
+   "min": 0,
+   "max": 1,
+   "display": "string",
+   "type": "readout"
+  },
+  {
+   "key": "l7_on",
+   "name": "On",
+   "options": [
+    "OFF",
+    "ON"
+   ],
+   "default": "ON"
+  },
+  {
+   "key": "l7_ch",
+   "name": "Channel",
+   "min": 1,
+   "max": 16,
+   "default": 7,
+   "display": "int"
+  },
+  {
+   "key": "l7_oct",
+   "name": "Octave",
+   "min": -2,
+   "max": 2,
+   "default": 0,
+   "display": "string"
+  },
+  {
+   "key": "l7_var",
+   "name": "Variation",
+   "min": 0,
+   "max": 99,
+   "default": 0,
+   "display": "string"
+  },
+  {
+   "key": "l7_dice",
+   "name": "Dice",
+   "momentary": true
+  },
+  {
+   "key": "l7_pat",
+   "name": "Steps",
+   "min": 0,
+   "max": 1,
+   "display": "string",
+   "type": "readout"
+  }
+ ]
+}

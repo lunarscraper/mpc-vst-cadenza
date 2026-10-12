@@ -1,0 +1,11 @@
+{
+  "name": "Cadenza FX",
+  "vendor": "lunarscraper",
+  "uid": "CdFx",
+  "version": 1000,
+  "so": "cadenza_fx.so",
+  "effect": true,
+  "params": "../vst/params.json",
+  "layout": "../vst/layout.conf",
+  "_comment": "Insert-effect variant of ../vst (same cadenza_vst.cpp, parameters and skin): 'effect' makes gen_vst.py emit PLUG_EFFECT in params.h and a category=Effect plugin-list entry, so Cadenza loads as an insert and takes none of the 8 plugin instrument slots. Audio passes through untouched; notes go out through the plugin's own ALSA port 'Cadenza FX'."
+}
