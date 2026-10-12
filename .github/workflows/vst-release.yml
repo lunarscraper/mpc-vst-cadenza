@@ -1,0 +1,34 @@
+# Build Cadenza (instrument variant, vst/) into a DRAFT release (cadenza-vst-v<version>) with
+# mpc-vst-plugins' shared workflow: Actions -> "VST release (draft)" -> Run workflow. dry_run (default on)
+# builds the zip and skin previews as run artifacts only. tools_ref pinned to the same mpc-vst-plugins
+# commit as mpc-vst-euclidier.
+name: VST release (draft)
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Version, e.g. 1.0.0
+        required: true
+        default: 1.0.0
+      dry_run:
+        description: Build only (zip + skin previews as run artifacts), no draft release
+        type: boolean
+        default: true
+
+jobs:
+  cadenza:
+    uses: sd88me/mpc-vst-plugins/.github/workflows/vst-release.yml@259f75d0ce0f836cfd89cc0a33c550b55917cffc
+    permissions:
+      contents: write
+    with:
+      tag: cadenza-vst-v${{ inputs.version }}
+      version: ${{ inputs.version }}
+      tools_ref: 259f75d0ce0f836cfd89cc0a33c550b55917cffc
+      vst_dir: vst
+      build: bash vst/build.sh
+      host_test: bash vst/test.sh
+      plugin_id: cadenza
+      license: MIT
+      about: 7-lane MIDI generator after the offline engine of Cadenza (bass groove/rolling/sub, arp, melody, pad, lead on one chord progression, incl. Goa phrygian) - drives synth tracks over MIDI.
+      dry_run: ${{ inputs.dry_run }}
